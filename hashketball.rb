@@ -162,9 +162,11 @@ def player_stats(player_name)
 end
 
 def player_biggest_shoe_size
-  players.max_by{|player, stats| stats.fetch(:shoe)}[1]
+  players.max_by{|player, stats| stats.fetch(:shoe)}[0]
 end
 
 def big_shoe_rebounds
   player_biggest_shoe_size.fetch(:rebounds)
 end
+
+binding.pry
